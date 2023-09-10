@@ -13,12 +13,12 @@ function App() {
         <Navigation />
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/*" exact element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/withdraw" element={<WithdrawInvestments />} />
           <Route path="/welcome" element={<Signup />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/*" exact element={<Login />} />
         </Routes>
         <Footer />
     </BrowserRouter>

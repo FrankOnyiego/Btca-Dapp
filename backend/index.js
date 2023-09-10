@@ -1,21 +1,12 @@
-const BitcoinCore = require('bitcoin-core');
 const express = require('express');
 const cors = require('cors');
 const mysql=require('mysql');
-const cookie = require('cookie');
-const axios = require('axios');
 const cookieParser = require('cookie-parser');
 
 const app = express();
 app.use(cors())
 app.use(express.json());
 app.use(cookieParser());
-
-// Replace with your fixed Bitcoin receiving address
-const fixedReceivingAddress = '1NCBvgPsvTBS3xwHzXyd3qBKXeCNBVAvig';
-
-// Replace with your Blockstream Esplora API URL
-const esploraBaseUrl = 'https://blockstream.info/api';
 
 // MySQL connection configuration
 const dbConfig = {
@@ -101,6 +92,10 @@ app.post('/fetch-user-data', (req, res) => {
     });
   });
   
+  /*Options -MultiViews
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.html [QSA,L]*/
 
 // Route to handle login
 app.post('/login', (req, res) => {
