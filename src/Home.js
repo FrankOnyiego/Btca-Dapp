@@ -15,8 +15,7 @@ const Home = () => {
 
   if (!cookies.userToken) {
     // If the 'userToken' cookie doesn't exist, redirect to the login page
-    // window.location.href = '/login'; // Adjust the path as needed
-    // return null; // Render nothing
+    window.location.href = '/login'; // Adjust the path as needed
     console.log("Hello the following are my cookies", cookies.userToken);
   }
 

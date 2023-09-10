@@ -1,7 +1,7 @@
 {
   "name": "btca",
   "version": "0.1.0",
-  "homepage":"http://btcinvest.vip",
+  "homepage":"https://btcinvest.vip",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.2",
