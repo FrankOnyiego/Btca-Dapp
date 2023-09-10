@@ -21,7 +21,7 @@ const Login = () => {
   const [error, setError] = useState('');
 
   const handleSubmit = (values, { setSubmitting }) => {
-    axios.post('http://localhost:3001/login', values)
+    axios.post(`${process.env.REACT_APP_API}/login`, values)
       .then((response) => {
         // Handle successful login, e.g., redirect to another page
         cookies.set('userToken', values.email);
