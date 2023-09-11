@@ -21,10 +21,11 @@ function Navigation() {
 
   const deleteCookie = () => {
     cookies.remove('userToken', { path: '/' });
+    window.location.href='/login';
   };
 
   return (
-    <ul>
+    <ul className="navbar navbar-dark bg-dark">
       <li>
         <NavLink to="/profile">Profile</NavLink>
       </li>
@@ -37,12 +38,10 @@ function Navigation() {
       <li>
         <NavLink to="/faq">Faqs</NavLink>
       </li>
-      <li style={{ float: 'right' }}>
-        <button className="active" onClick={deleteCookie}>
-          <NavLink to="/login">Logout</NavLink>
-        </button>
+      <li style={{ float: 'right' }}> 
+          <NavLink onClick={deleteCookie} className="btn btn-danger" to="/login">Logout</NavLink>
       </li>
-    </ul>
+    </ul> 
   );
 }
 

@@ -10,8 +10,8 @@ const Footer = () => {
         </div>
         <div className="footer-section contact-section">
           <h4>Contact Us</h4>
-          <p>Email: support@btca.vip</p>
-          <p>Phone: +1 (123) 456-7890</p>
+          <p><a href="mailto:support@btcinvest.vip">Email: support@btcinvest.vip</a></p>
+          <p>Location: Atlanta, USA</p>
         </div>
       </div>
     </footer>

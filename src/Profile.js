@@ -12,7 +12,7 @@ const Profile = () => {
 
   useEffect(() => {
     // Fetch user's email and investments from the backend
-    axios.post('http://localhost:3001/fetch-user-data',{ email: userToken })
+    axios.post(`${process.env.REACT_APP_API}/fetch-user-data`,{ email: userToken })
       .then((response) => {
         setEmail(response.data.email);
         setInvestments(response.data.investments);

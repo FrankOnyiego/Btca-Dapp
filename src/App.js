@@ -10,9 +10,13 @@ import { Route, Routes,BrowserRouter } from 'react-router-dom';
 function App() {
   return (  
     <BrowserRouter> 
-        <Navigation />
+        <Navigation style={{
+          top:"0px",
+          position:"fixed"
+        }}/>
         <Routes>
           <Route path="/" exact element={<Home />} />
+          <Route path="/invest" exact element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/withdraw" element={<WithdrawInvestments />} />

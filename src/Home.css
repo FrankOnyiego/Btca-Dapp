@@ -25,6 +25,7 @@
 
 body {
   margin: 0;
+  padding-top: 0px;
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
 }
@@ -40,13 +41,13 @@ body {
 .nav-link {
   color: #fff !important;
 }
-
+ 
 .content {
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  padding: 20px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .logout-button {
@@ -122,6 +123,13 @@ body {
   padding: 20px;
 }
 
+
+/* In your CSS file or style tag */
+.active-link {
+  color: blue !important; /* Add the desired blue color */
+}
+
+
 /*navigation*/
 /* Add this CSS to your component's CSS file or in a style tag within your React component */
 ul {
@@ -129,8 +137,8 @@ ul {
   margin: 0;
   padding: 20px 0; /* Adjust the padding to make the navigation bar taller */
   background-color: #333; /* Background color for the navigation bar */
-  overflow: hidden;
-}
+  max-width: '100%';
+} 
 
 li {
   float: left;
@@ -141,6 +149,7 @@ li a {
   color: white;
   text-align: center;
   padding: 18px 16px; /* Adjust the padding to vertically center the text */
+  padding-left: 5px;
   text-decoration: none;
 }
 
@@ -154,14 +163,6 @@ li:last-child {
   margin-right: 4px;
 }
 
-li:last-child a {
-  background-color: #ff4500; /* Background color for the "Logout" link */
-  color: white;
-}
-
-li:last-child a:hover {
-  background-color: #d32f00; /* Background color for the "Logout" link on hover */
-}
 
 /* Add styles for the active link if needed */
 li a.active {

@@ -27,11 +27,12 @@ const WithdrawInvestments = () => {
         <input
           type="number"
           id="withdrawAmount"
-          value={withdrawAmount}
+          placeholder="Bitcoin amount here ..."
+          value={withdrawAmount} 
           onChange={(e) => setWithdrawAmount(e.target.value)}
         />
         {withdrawError && <p className="error-message">{withdrawError}</p>}
-        {withdrawSuccess && <p className="success-message">Withdrawal unsuccessful!</p>}
+        {withdrawSuccess && <p className="error-message">insufficient Bitcoin balance!</p>}
         <button onClick={handleWithdraw}>Withdraw</button>
       </div>
     </div>

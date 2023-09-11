@@ -31,7 +31,7 @@ const Home = () => {
   return (
     <div>
       <div className="content">
-        <h1>Welcome to the Btca!</h1>
+        <h1>Welcome to the Btcinvest!</h1>
         <div className="tab-content">
           <div className="tab">
             <h2>VIP Plans</h2>
