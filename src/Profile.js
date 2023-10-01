@@ -32,11 +32,11 @@ const Profile = () => {
       ) : (
         <div className="profile-content">
           <div className="profile-info">
-            <h2>Your Email:</h2>
+            <h2>My Username:</h2>
             <p>{email}</p>
           </div>
           <div className="investments">
-            <h2>Your Investments:</h2>
+            <h2>My Investments:</h2>
             <table className="investments-table">
               <thead>
                 <tr>

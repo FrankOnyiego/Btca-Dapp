@@ -22,6 +22,7 @@ const Signup = () => {
         },
         body: JSON.stringify({
           email: values.email,
+          username: values.username, // Include username in the request
           password: values.password,
         }),
       });
@@ -31,7 +32,7 @@ const Signup = () => {
         cookies.set('userToken', values.email);
 
         const userToken = cookies.get('userToken');
-        if(userToken){
+        if (userToken) {
           window.location.href = '/';
         }
         console.log("hello this are my cookies", `btca${userToken}`);
@@ -49,6 +50,7 @@ const Signup = () => {
 
   const validationSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required'),
+    username: Yup.string().required('Username is required'), // Add validation for username
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
     confirmPassword: Yup.string()
       .oneOf([Yup.ref('password'), null], 'Passwords must match')
@@ -58,7 +60,7 @@ const Signup = () => {
   return (
     <div className="signup-container">
       <Formik
-        initialValues={{ email: '', password: '', confirmPassword: '' }}
+        initialValues={{ email: '', username: '', password: '', confirmPassword: '' }} // Include "username" field
         validationSchema={validationSchema}
         onSubmit={(values) => handleSignup(values)}
       >
@@ -68,6 +70,9 @@ const Signup = () => {
           <label htmlFor="email">Email:</label>
           <Field type="email" id="email" name="email" />
           <ErrorMessage name="email" component="div" className="error-message" />
+          <label htmlFor="username">Username:</label> {/* Add username label */}
+          <Field type="text" id="username" name="username" /> {/* Add username field */}
+          <ErrorMessage name="username" component="div" className="error-message" /> {/* Display username error */}
           <label htmlFor="password">Password:</label>
           <Field type="password" id="password" name="password" />
           <ErrorMessage name="password" component="div" className="error-message" />

@@ -25,6 +25,49 @@ dbConnection.connect((err) => {
   }
 });
 
+app.get('/total-users', (req, res) => {
+  // Query the database to count the number of users
+  // Replace 'dbConnection' with your database connection
+  dbConnection.query('SELECT COUNT(*) AS totalUsers FROM users', (error, results) => {
+    if (error) {
+      console.error('Error fetching total users:', error);
+      return res.status(500).json({ error: 'An error occurred while fetching total users' });
+    }
+
+    const totalUsers = results[0].totalUsers;
+    res.json({ totalUsers });
+  });
+});
+
+app.post('/transactionid', (req, res) => {
+  const { transactionId,email } = req.body;
+
+  // Validate the transaction ID (you can add more validation logic here)
+  if (!transactionId) {
+    return res.status(400).json({ error: 'Transaction ID is required.' });
+  }
+
+    if (!email) {
+    return res.status(400).json({ error: 'Sign in  is required.' });
+  }
+
+  // Process the transaction ID as needed (e.g., save it to a database)
+  // Replace this with your actual processing logic
+        // Email is not registered, proceed with registration
+        const insertUserQuery = `INSERT INTO investments (user_id,amount,vip_level,transactionid) VALUES (?,?,?,?)`;
+  
+        dbConnection.query(insertUserQuery, [email, 0,1,transactionId], (err, result) => {
+          if (err) {
+            console.error('Error inserting user:', err);
+            return res.status(500).json({ error: 'An error occurred during registration' });
+          }
+    
+          console.log('User registered successfully');
+          // Assuming the user is registered successfully
+          return res.status(200).json({ message: 'User registered successfully' });
+        });
+});
+
 app.post('/fetch-user-data', (req, res) => {
   // Replace this with your logic to fetch user data from your database
   const userEmail = req.body.email;

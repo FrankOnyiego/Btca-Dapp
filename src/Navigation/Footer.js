@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-section">
-          <p>&copy; {new Date().getFullYear()} Btca. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Btcinvest. All rights reserved.</p>
         </div>
         <div className="footer-section contact-section">
           <h4>Contact Us</h4>
