@@ -1,0 +1,25 @@
+/* Faq.css */
+.faq-container {
+    padding: 20px;
+  }
+  
+  .faq-list {
+    margin-top: 20px;
+  }
+  
+  .faq-item {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+  
+  .faq-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .faq-item p {
+    margin: 10px 0;
+  }
+  

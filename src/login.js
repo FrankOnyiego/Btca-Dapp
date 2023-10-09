@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { Cookies } from 'react-cookie';
 import './Login.css'; // Import your CSS file for styling
+import ReCAPTCHA from "react-google-recaptcha";
 
 const Login = () => {
   const cookies = new Cookies();
@@ -40,7 +41,12 @@ const Login = () => {
         setSubmitting(false);
       });
   };
-
+  const handleCaptchaChange = (value) => {
+    // 'value' will be the CAPTCHA response token
+    console.log("CAPTCHA Value:", value);
+    // You can send this value to your server for verification
+  };
+  
   return (
     <div className="login-container">
       <Formik
@@ -72,6 +78,12 @@ const Login = () => {
               />
               <ErrorMessage name="password" component="div" className="error" />
             </div>
+            <div style={{width: "80%"}}>
+            <ReCAPTCHA
+  sitekey="6LcokYUoAAAAAFAUksVYJQK-Wrh3MB7BZ_Id9uHx"
+  onChange={(value) => handleCaptchaChange(value)}
+/> 
+            </div>
             <button type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Logging in...' : 'Login'}
             </button>
@@ -83,6 +95,8 @@ const Login = () => {
           </Form>
         )}
       </Formik>
+
+
     </div>
   );
 };

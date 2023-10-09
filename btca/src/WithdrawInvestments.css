@@ -1,0 +1,51 @@
+/* WithdrawInvestments.css */
+.withdraw-investments {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .withdraw-form {
+    margin-top: 15px;
+  }
+  
+  .withdraw-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .withdraw-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .withdraw-form button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .withdraw-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: #ff3333;
+    margin-top: 5px;
+  }
+  
+  .success-message {
+    color: #00cc44;
+    margin-top: 5px;
+  }
+  
